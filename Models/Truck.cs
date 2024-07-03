@@ -28,9 +28,9 @@ namespace Truck_Loading_Application.Models
 
         public int DriverId { get; set; }
         public TruckDriver Driver { get; set; }
-        public List<TruckRoute> TruckRoutes { get; set; }
-        public List<Trip> Trips { get; set; }
-        public List<Report> Reports { get; set; }
+        public virtual List<TruckRoute> TruckRoutes { get; set; }
+        public virtual List<Trip> Trips { get; set; } = new List<Trip> { };
+        public virtual List<Report> Reports { get; set; } = new List<Report> { };
 
         public bool IsDeleted { get; set; } = false; // Soft delete
     }

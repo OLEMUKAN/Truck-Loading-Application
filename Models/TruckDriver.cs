@@ -16,7 +16,7 @@ namespace Truck_Loading_Application.Models
         [Required]
         public string RegistrationNumber { get; set; }
 
-        public List<Truck> Trucks { get; set; }
+        public virtual List<Truck> Trucks { get; set; } = new List<Truck> { };
 
         public bool IsDeleted { get; set; } = false; // Soft delete
     }

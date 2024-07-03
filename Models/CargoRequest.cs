@@ -21,7 +21,7 @@ namespace Truck_Loading_Application.Models
         public string SpecialInstructions { get; set; }
 
         public ApplicationUser Client { get; set; }
-        public List<CargoItem> CargoItems { get; set; }
-        public List<Trip> Trips { get; set; }
+        public virtual List<CargoItem> CargoItems { get; set; }
+        public  virtual List<Trip> Trips { get; set; }
     }
 }

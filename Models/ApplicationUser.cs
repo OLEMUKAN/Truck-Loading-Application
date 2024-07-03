@@ -21,7 +21,7 @@ namespace Truck_Loading_Application.Models
 
         public UserRole role { get; set; }
 
-        public List<CargoRequest> CargoRequests { get; set; }
-        public List<Report> Reports { get; set; }
+        public List<CargoRequest> CargoRequests { get; set; } = new List<CargoRequest> { };
+        public List<Report> Reports { get; set; } = new List<Report> { };
     }
 }

@@ -19,7 +19,7 @@ namespace Truck_Loading_Application.Models
         public string Dimensions { get; set; }
         public bool HazardousMaterial { get; set; }
 
-        public int RequestId { get; set; }
+        public int RequestId { get; set; } 
         public CargoRequest CargoRequest { get; set; }
     }
 }

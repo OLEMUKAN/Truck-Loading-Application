@@ -16,7 +16,7 @@ namespace Truck_Loading_Application.Models
         public int Distance { get; set; }
 
         public Truck Truck { get; set; }
-        public List<Trip> Trips { get; set; }
+        public virtual List<Trip> Trips { get; set; } = new List<Trip> { };
     }
 }
 

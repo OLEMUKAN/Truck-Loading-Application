@@ -1,27 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using Truck_Loading_Application.Models.enums;
 
 
 namespace Truck_Loading_Application.Models
 {
-    public class ApplicationUser
+    public class ApplicationUser: IdentityUser<Guid>
     {
-        [Key]
-        public int UserId { get; set; }
 
         [Required]
         public string Name { get; set; }
 
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+        public UserRole Role { get; set; }
 
-        [Required]
-        public string Password { get; set; }
+        public virtual List<CargoRequest> CargoRequests { get; set; } = new List<CargoRequest>();
 
-        public UserRole role { get; set; }
-
-        public List<CargoRequest> CargoRequests { get; set; } = new List<CargoRequest> { };
-        public List<Report> Reports { get; set; } = new List<Report> { };
+        public virtual List<Report> CreatedReports { get; set; } = new List<Report>();
+        public virtual List<Report> UpdatedReports { get; set; } = new List<Report>();
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
+
 
 namespace Truck_Loading_Application.Models
 {
-    public class TruckDriver
+    public class TruckDriver : SoftDeleteEntity
     {
         [Key]
-        public int DriverId { get; set; }
+        public Guid DriverId { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -16,8 +16,22 @@ namespace Truck_Loading_Application.Models
         [Required]
         public string RegistrationNumber { get; set; }
 
-        public virtual List<Truck> Trucks { get; set; } = new List<Truck> { };
+        // New properties
+        public string LicenseNumber { get; set; }
 
-        public bool IsDeleted { get; set; } = false; // Soft delete
+        [DataType(DataType.Date)]
+        public DateTime LicenseExpiryDate { get; set; }
+
+        public DriverAvailabilityStatus AvailabilityStatus { get; set; } = DriverAvailabilityStatus.Available;
+
+        public virtual List<Truck> Trucks { get; set; } = new List<Truck>();
+    }
+
+    public enum DriverAvailabilityStatus
+    {
+        Available,
+        OnDuty,
+        OnBreak,
+        OnLeave
     }
 }

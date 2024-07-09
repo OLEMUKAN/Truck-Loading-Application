@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Truck_Loading_Application.Data;
 
@@ -11,9 +12,11 @@ using Truck_Loading_Application.Data;
 namespace Truck_Loading_Application.Migrations
 {
     [DbContext(typeof(Truck_Loading_ApplicationContext))]
-    partial class Truck_Loading_ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240709124151_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -9,7 +9,9 @@ namespace Truck_Loading_Application.Models
     {
 
         [Required]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
 
         public UserRole Role { get; set; }
 

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Truck_Loading_Application;
@@ -18,6 +19,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options => opt
     .AddDefaultTokenProviders();
 
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {

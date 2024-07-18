@@ -1,0 +1,108 @@
+﻿@page
+@model Truck_Loading_Application.Pages.TruckRoutes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].TravelRoute)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].PostingTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].EstimatedTravelTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].EstimatedDistance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].ActualTravelTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].ActualDistance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].Truck)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].UpdatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].CreatedByUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].UpdatedByUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].IsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckRoute[0].DeletedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TruckRoute) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TravelRoute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedTravelTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedDistance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualTravelTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualDistance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Truck.RegistrationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedByUser.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedByUser.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeletedAt)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RouteId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RouteId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RouteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,78 @@
+﻿@page
+@model Truck_Loading_Application.Pages.LoadPlans.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LoadPlan[0].Trip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoadPlan[0].Truck)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoadPlan[0].TotalWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoadPlan[0].UsedCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoadPlan[0].LoadingInstructions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoadPlan[0].PlannedLoadingTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoadPlan[0].ActualLoadingTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoadPlan[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.LoadPlan) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trip.TripId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Truck.RegistrationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsedCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoadingInstructions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlannedLoadingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualLoadingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.LoadPlanId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.LoadPlanId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.LoadPlanId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

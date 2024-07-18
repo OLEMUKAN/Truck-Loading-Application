@@ -1,0 +1,95 @@
+﻿@page
+@model Truck_Loading_Application.Pages.TruckRoutes.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TruckRoute</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TruckRoute.RouteId" />
+            <div class="form-group">
+                <label asp-for="TruckRoute.TruckId" class="control-label"></label>
+                <select asp-for="TruckRoute.TruckId" class="form-control" asp-items="ViewBag.TruckId"></select>
+                <span asp-validation-for="TruckRoute.TruckId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.TravelRoute" class="control-label"></label>
+                <input asp-for="TruckRoute.TravelRoute" class="form-control" />
+                <span asp-validation-for="TruckRoute.TravelRoute" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.PostingTime" class="control-label"></label>
+                <input asp-for="TruckRoute.PostingTime" class="form-control" />
+                <span asp-validation-for="TruckRoute.PostingTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.EstimatedTravelTime" class="control-label"></label>
+                <input asp-for="TruckRoute.EstimatedTravelTime" class="form-control" />
+                <span asp-validation-for="TruckRoute.EstimatedTravelTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.EstimatedDistance" class="control-label"></label>
+                <input asp-for="TruckRoute.EstimatedDistance" class="form-control" />
+                <span asp-validation-for="TruckRoute.EstimatedDistance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.ActualTravelTime" class="control-label"></label>
+                <input asp-for="TruckRoute.ActualTravelTime" class="form-control" />
+                <span asp-validation-for="TruckRoute.ActualTravelTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.ActualDistance" class="control-label"></label>
+                <input asp-for="TruckRoute.ActualDistance" class="form-control" />
+                <span asp-validation-for="TruckRoute.ActualDistance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.CreatedAt" class="control-label"></label>
+                <input asp-for="TruckRoute.CreatedAt" class="form-control" />
+                <span asp-validation-for="TruckRoute.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.UpdatedAt" class="control-label"></label>
+                <input asp-for="TruckRoute.UpdatedAt" class="form-control" />
+                <span asp-validation-for="TruckRoute.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.CreatedByUserId" class="control-label"></label>
+                <select asp-for="TruckRoute.CreatedByUserId" class="form-control" asp-items="ViewBag.CreatedByUserId"></select>
+                <span asp-validation-for="TruckRoute.CreatedByUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.UpdatedByUserId" class="control-label"></label>
+                <select asp-for="TruckRoute.UpdatedByUserId" class="form-control" asp-items="ViewBag.UpdatedByUserId"></select>
+                <span asp-validation-for="TruckRoute.UpdatedByUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TruckRoute.IsDeleted" /> @Html.DisplayNameFor(model => model.TruckRoute.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckRoute.DeletedAt" class="control-label"></label>
+                <input asp-for="TruckRoute.DeletedAt" class="form-control" />
+                <span asp-validation-for="TruckRoute.DeletedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

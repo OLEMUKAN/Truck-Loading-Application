@@ -1,0 +1,80 @@
+﻿@page
+@model Truck_Loading_Application.Pages.Trips.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Trip</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Trip.TripId" />
+            <div class="form-group">
+                <label asp-for="Trip.TruckId" class="control-label"></label>
+                <select asp-for="Trip.TruckId" class="form-control" asp-items="ViewBag.TruckId"></select>
+                <span asp-validation-for="Trip.TruckId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.RouteId" class="control-label"></label>
+                <input asp-for="Trip.RouteId" class="form-control" />
+                <span asp-validation-for="Trip.RouteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.RequestId" class="control-label"></label>
+                <input asp-for="Trip.RequestId" class="form-control" />
+                <span asp-validation-for="Trip.RequestId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.PlannedStartTime" class="control-label"></label>
+                <input asp-for="Trip.PlannedStartTime" class="form-control" />
+                <span asp-validation-for="Trip.PlannedStartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.PlannedEndTime" class="control-label"></label>
+                <input asp-for="Trip.PlannedEndTime" class="form-control" />
+                <span asp-validation-for="Trip.PlannedEndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.ActualStartTime" class="control-label"></label>
+                <input asp-for="Trip.ActualStartTime" class="form-control" />
+                <span asp-validation-for="Trip.ActualStartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.ActualEndTime" class="control-label"></label>
+                <input asp-for="Trip.ActualEndTime" class="form-control" />
+                <span asp-validation-for="Trip.ActualEndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.Status" class="control-label"></label>
+                <select asp-for="Trip.Status" class="form-control"></select>
+                <span asp-validation-for="Trip.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.Rating" class="control-label"></label>
+                <input asp-for="Trip.Rating" class="form-control" />
+                <span asp-validation-for="Trip.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trip.Feedback" class="control-label"></label>
+                <input asp-for="Trip.Feedback" class="form-control" />
+                <span asp-validation-for="Trip.Feedback" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,69 @@
+﻿@page
+@model Truck_Loading_Application.Pages.TruckDrivers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TruckDriver</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TruckDriver.Name" class="control-label"></label>
+                <input asp-for="TruckDriver.Name" class="form-control" />
+                <span asp-validation-for="TruckDriver.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckDriver.ContactInfo" class="control-label"></label>
+                <input asp-for="TruckDriver.ContactInfo" class="form-control" />
+                <span asp-validation-for="TruckDriver.ContactInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckDriver.RegistrationNumber" class="control-label"></label>
+                <input asp-for="TruckDriver.RegistrationNumber" class="form-control" />
+                <span asp-validation-for="TruckDriver.RegistrationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckDriver.LicenseNumber" class="control-label"></label>
+                <input asp-for="TruckDriver.LicenseNumber" class="form-control" />
+                <span asp-validation-for="TruckDriver.LicenseNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckDriver.LicenseExpiryDate" class="control-label"></label>
+                <input asp-for="TruckDriver.LicenseExpiryDate" class="form-control" />
+                <span asp-validation-for="TruckDriver.LicenseExpiryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckDriver.AvailabilityStatus" class="control-label"></label>
+                <select asp-for="TruckDriver.AvailabilityStatus" class="form-control"></select>
+                <span asp-validation-for="TruckDriver.AvailabilityStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TruckDriver.IsDeleted" /> @Html.DisplayNameFor(model => model.TruckDriver.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckDriver.DeletedAt" class="control-label"></label>
+                <input asp-for="TruckDriver.DeletedAt" class="form-control" />
+                <span asp-validation-for="TruckDriver.DeletedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,67 @@
+﻿@page
+@model Truck_Loading_Application.Pages.LoadPlans.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LoadPlan</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadPlan.Trip)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadPlan.Trip.TripId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadPlan.Truck)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadPlan.Truck.RegistrationNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadPlan.TotalWeight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadPlan.TotalWeight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadPlan.UsedCapacity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadPlan.UsedCapacity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadPlan.LoadingInstructions)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadPlan.LoadingInstructions)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadPlan.PlannedLoadingTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadPlan.PlannedLoadingTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadPlan.ActualLoadingTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadPlan.ActualLoadingTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadPlan.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadPlan.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.LoadPlan.LoadPlanId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

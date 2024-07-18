@@ -1,0 +1,80 @@
+﻿@page
+@model Truck_Loading_Application.Pages.Reports.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Report</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Report.ReportId" />
+            <div class="form-group">
+                <label asp-for="Report.Type" class="control-label"></label>
+                <select asp-for="Report.Type" class="form-control"></select>
+                <span asp-validation-for="Report.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Report.Content" class="control-label"></label>
+                <input asp-for="Report.Content" class="form-control" />
+                <span asp-validation-for="Report.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Report.Format" class="control-label"></label>
+                <input asp-for="Report.Format" class="form-control" />
+                <span asp-validation-for="Report.Format" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Report.TruckId" class="control-label"></label>
+                <select asp-for="Report.TruckId" class="form-control" asp-items="ViewBag.TruckId"></select>
+                <span asp-validation-for="Report.TruckId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Report.CreatedAt" class="control-label"></label>
+                <input asp-for="Report.CreatedAt" class="form-control" />
+                <span asp-validation-for="Report.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Report.UpdatedAt" class="control-label"></label>
+                <input asp-for="Report.UpdatedAt" class="form-control" />
+                <span asp-validation-for="Report.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Report.CreatedByUserId" class="control-label"></label>
+                <select asp-for="Report.CreatedByUserId" class="form-control" asp-items="ViewBag.CreatedByUserId"></select>
+                <span asp-validation-for="Report.CreatedByUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Report.UpdatedByUserId" class="control-label"></label>
+                <select asp-for="Report.UpdatedByUserId" class="form-control" asp-items="ViewBag.UpdatedByUserId"></select>
+                <span asp-validation-for="Report.UpdatedByUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Report.IsDeleted" /> @Html.DisplayNameFor(model => model.Report.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Report.DeletedAt" class="control-label"></label>
+                <input asp-for="Report.DeletedAt" class="form-control" />
+                <span asp-validation-for="Report.DeletedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

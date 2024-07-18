@@ -27,7 +27,6 @@ namespace Truck_Loading_Application.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // ApplicationUser relationships
             modelBuilder.Entity<ApplicationUser>()
                 .HasMany(u => u.CreatedReports)
                 .WithOne(r => r.CreatedByUser)
@@ -46,7 +45,6 @@ namespace Truck_Loading_Application.Data
                 .HasForeignKey(cr => cr.ClientId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Truck relationships
             modelBuilder.Entity<Truck>()
                 .HasMany(t => t.Trips)
                 .WithOne(tr => tr.Truck)
@@ -71,12 +69,6 @@ namespace Truck_Loading_Application.Data
                 .WithMany()
                 .HasForeignKey(lp => lp.TripId)
                 .OnDelete(DeleteBehavior.NoAction);
-
-            // Ensure all entities use Guid for their ID properties
-            // This is implicitly done when you define the ID properties of your entities as Guid
-            // No need for explicit configuration here unless you have specific needs
-
-            // Add other relationship configurations as needed
         }
     }
 }

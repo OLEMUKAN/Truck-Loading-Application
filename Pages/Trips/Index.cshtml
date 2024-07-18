@@ -1,0 +1,90 @@
+﻿@page
+@model Truck_Loading_Application.Pages.Trips.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].RouteId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].RequestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].PlannedStartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].PlannedEndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].ActualStartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].ActualEndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].Feedback)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trip[0].Truck)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Trip) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RouteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlannedStartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlannedEndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualStartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualEndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feedback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Truck.RegistrationNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TripId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TripId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TripId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

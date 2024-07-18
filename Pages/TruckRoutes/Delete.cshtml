@@ -1,0 +1,100 @@
+﻿@page
+@model Truck_Loading_Application.Pages.TruckRoutes.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TruckRoute</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.TravelRoute)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.TravelRoute)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.PostingTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.PostingTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.EstimatedTravelTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.EstimatedTravelTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.EstimatedDistance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.EstimatedDistance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.ActualTravelTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.ActualTravelTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.ActualDistance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.ActualDistance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.Truck)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.Truck.RegistrationNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.CreatedAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.CreatedAt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.UpdatedAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.UpdatedAt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.CreatedByUser)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.CreatedByUser.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.UpdatedByUser)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.UpdatedByUser.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.IsDeleted)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.IsDeleted)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TruckRoute.DeletedAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TruckRoute.DeletedAt)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="TruckRoute.RouteId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
